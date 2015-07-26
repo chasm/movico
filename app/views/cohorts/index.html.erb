@@ -1,0 +1,13 @@
+<h1>Cohorts</h1>
+
+<p><%= link_to "Add a cohort", new_cohort_url, class: "btn btn-success" %></p>
+
+<ul>
+  <% @cohorts.each do |cohort| %>
+    <li>
+      <%= link_to cohort.name, cohort_url(cohort) %>
+      [<%= link_to "edit", edit_cohort_url(cohort) %>]
+      [<%= link_to "delete", cohort_url(cohort), method: :delete, confirm: "Are you sure?" %>]
+    </li>
+  <% end %>
+</ul>
